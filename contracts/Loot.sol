@@ -22,18 +22,11 @@ contract Loot is
     uint256 private _nextTokenId;
     string private _repoURI = "";
 
-    constructor(
-        address defaultAdmin,
-        address pauser,
-        address minter,
-        address burner,
-        address manager
-    ) ERC721("Loot", "LOOT") {
+    constructor(address defaultAdmin) ERC721("Loot", "LOOT") {
         _grantRole(DEFAULT_ADMIN_ROLE, defaultAdmin);
-        _grantRole(Roles.NFT_PAUSER, pauser);
-        _grantRole(Roles.NFT_MINTER, minter);
-        _grantRole(Roles.NFT_BURNER, burner);
-        _grantRole(Roles.NFT_MANAGER, manager);
+        _grantRole(Roles.NFT_PAUSER, defaultAdmin);
+        _grantRole(Roles.NFT_MINTER, defaultAdmin);
+        _grantRole(Roles.NFT_MANAGER, defaultAdmin);
     }
 
     function pause() public onlyRole(Roles.NFT_PAUSER) {
