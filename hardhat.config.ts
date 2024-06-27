@@ -6,7 +6,7 @@ import "dotenv/config";
 
 
 const config: HardhatUserConfig = {
-  defaultNetwork: "baseSepolia",
+  defaultNetwork: "base",
   solidity: {
     compilers: [
       {
