@@ -22,7 +22,7 @@ contract Loot is
     uint256 private _nextTokenId;
     string private _repoURI = "";
 
-    constructor(address defaultAdmin) ERC721("Loot", "LOOT") {
+    constructor(address defaultAdmin) ERC721("ScanQuest Loots", "LOOT") {
         _grantRole(DEFAULT_ADMIN_ROLE, defaultAdmin);
         _grantRole(Roles.NFT_PAUSER, defaultAdmin);
         _grantRole(Roles.NFT_MINTER, defaultAdmin);
